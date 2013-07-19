@@ -36,5 +36,55 @@ function checkIfVowel(input){
 	}
 	return false;
 }
-
 //Usage: pigLatinizer('There once was a man from Nantucket');
+
+
+// Vowel Counter
+function vowelCounter(input){
+	var currentchar, counter, va, ve, vi, vo, vu; 
+	counter = va = ve = vi = vo = vu = 0;
+	var chars = input.split('');
+	for(var i = 0; i < chars.length; i++) {
+		currentchar = chars[i].toLowerCase();
+		if(checkIfVowel(currentchar)){
+			counter++;
+			switch(currentchar) {
+				case 'a':
+					va++;
+					break;
+				case 'e':
+					ve++;
+					break;
+				case 'i':
+					vi++;
+					break;
+				case 'o':
+					vo++;
+					break;				
+				case 'u':
+					vu++;
+					break;
+			}
+		}
+	}
+
+	return {
+		"counter": counter,
+		"a": va,
+		"e": ve,
+		"i": vi,
+		"o": vo,
+		"u": vu
+	}
+}
+
+function checkIfVowel(input){
+	var vowels = ['a', 'e', 'i', 'o', 'u'];
+	for(var k = 0; k < vowels.length; k++){
+		index = input.indexOf(vowels[k]);
+		if(index > -1){
+			return true;
+		}
+	}
+	return false;
+}
