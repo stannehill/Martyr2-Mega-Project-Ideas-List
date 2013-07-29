@@ -88,3 +88,16 @@ function checkIfVowel(input){
 	}
 	return false;
 }
+//Usage: vowelCounter("There once was a man from Nantucket");
+
+
+// Check if palindrome (for words and phrases)
+function palindromeDetector(input){
+	var isPalindrome = false;
+	input = input.toLowerCase().replace(/\s+/g, '');
+	var reversed = input.split('').reverse().join('');
+
+	input === reversed ? alert('Yep!') : alert('Nope!');
+}
+//Usage: palindromeDetector('Nurses run');
+
