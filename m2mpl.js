@@ -95,6 +95,7 @@ function checkIfVowel(input){
 function palindromeDetector(input){
 	var isPalindrome = false;
 	input = input.toLowerCase().replace(/\s+/g, '');
+	input = input.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,"") // strip punctuation, why not?
 	var reversed = input.split('').reverse().join('');
 
 	input === reversed ? alert('Yep!') : alert('Nope!');
